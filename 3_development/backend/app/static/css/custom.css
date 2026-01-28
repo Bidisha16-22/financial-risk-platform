@@ -1,0 +1,23 @@
+body {
+  background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+  font-family: "Segoe UI", sans-serif;
+}
+
+.card {
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.glass {
+  background: rgba(255,255,255,0.88);
+  backdrop-filter: blur(14px);
+}
+
+input {
+  border-radius: 10px !important;
+}
+
+.btn {
+  border-radius: 10px;
+}
+

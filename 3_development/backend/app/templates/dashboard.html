@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container mt-4">
+
+  <h2>Financial Risk Dashboard</h2>
+  <p class="text-muted">Modern internal risk assessment system</p>
+
+  <div class="row g-4">
+
+    <!-- Risk Assessment -->
+    <div class="col-md-4">
+      <div class="card glass p-4">
+        <h5>📊 Risk Assessment</h5>
+
+        <input id="income" type="number" class="form-control mb-2" placeholder="Annual Income">
+        <input id="debt" type="number" class="form-control mb-2" placeholder="Total Debt">
+        <input id="credit" type="number" class="form-control mb-3" placeholder="Credit Score">
+
+        <button class="btn btn-primary w-100 mb-2" onclick="calculateRisk()">Assess Risk</button>
+        <button class="btn btn-outline-secondary w-100" onclick="resetRisk()">Reset</button>
+      </div>
+    </div>
+
+    <!-- Risk Result -->
+    <div class="col-md-4">
+      <div class="card glass p-4 text-center">
+        <h5>⚠️ Risk Result</h5>
+        <div id="riskBadge" class="display-5 fw-bold">--</div>
+      </div>
+    </div>
+
+    <!-- Risk Analytics -->
+    <div class="col-md-4">
+      <div class="card glass p-4">
+        <h5>📈 Risk Analytics</h5>
+        <canvas id="riskChart"></canvas>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Risk History -->
+  <div class="card glass p-4 mt-4">
+    <h5>🕒 Risk History</h5>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Income</th>
+          <th>Debt</th>
+          <th>Credit</th>
+          <th>Risk</th>
+        </tr>
+      </thead>
+      <tbody id="historyBody">
+        {% for r in history %}
+        <tr>
+          <td>{{ r.created_at.strftime("%d-%m-%Y %H:%M") }}</td>
+          <td>{{ r.income }}</td>
+          <td>{{ r.debt }}</td>
+          <td>{{ r.credit_score }}</td>
+          <td>
+            <span class="badge 
+              {% if r.risk_level == 'High' %}bg-danger
+              {% elif r.risk_level == 'Medium' %}bg-warning
+              {% else %}bg-success{% endif %}">
+              {{ r.risk_level }}
+            </span>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+{% endblock %}

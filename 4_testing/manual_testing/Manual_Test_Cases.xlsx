@@ -1,0 +1,12 @@
+| TC ID | Module   | Test Scenario      | Steps                        | Expected Result              | Status |
+| ----- | -------- | ------------------ | ---------------------------- | ---------------------------- | ------ |
+| TC01  | Auth     | Register new user  | Enter valid email & password | Redirect to dashboard        | Pass   |
+| TC02  | Auth     | Duplicate register | Register same email again    | Error message shown          | Pass   |
+| TC03  | Auth     | Login valid        | Enter correct credentials    | Dashboard opens              | Pass   |
+| TC04  | Auth     | Login invalid      | Enter wrong password         | Invalid credentials message  | Pass   |
+| TC05  | Auth     | Forgot password    | Enter registered email       | Temporary password generated | Pass   |
+| TC06  | Auth     | Login after reset  | Login with temp password     | Dashboard opens              | Pass   |
+| TC07  | Risk     | Risk calculation   | Enter income, debt, credit   | Risk displayed               | Pass   |
+| TC08  | Risk     | Reset              | Click reset button           | Inputs cleared               | Pass   |
+| TC09  | History  | Risk history       | Submit risk                  | History updated              | Pass   |
+| TC10  | Security | Logout             | Click logout                 | Redirect to login            | Pass   |

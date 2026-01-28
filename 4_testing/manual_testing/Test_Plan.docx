@@ -1,0 +1,42 @@
+TEST PLAN
+
+Project Name:
+Financial Risk Assessment Platform
+
+Prepared By:
+<Bidisha Bhattacharjee>
+
+Objective:
+The objective of this test plan is to validate the functionality,
+performance, and reliability of the Financial Risk Assessment Platform.
+
+Test Scope:
+• User Authentication
+• Password Reset
+• Risk Calculation
+• Dashboard Operations
+• Risk History Management
+
+Test Type:
+• Manual Testing
+• Automated Testing
+
+Test Environment:
+• OS: Windows 10 / 11
+• Browser: Google Chrome
+• Backend: Flask (Python)
+• Database: SQLite
+• Deployment: Local Docker (Cloud Simulation)
+
+Test Deliverables:
+• Test Plan
+• Manual Test Cases
+• Test Execution Report
+
+Entry Criteria:
+• Application should run without errors
+• Database initialized
+
+Exit Criteria:
+• All test cases executed
+• No critical defects remaining
